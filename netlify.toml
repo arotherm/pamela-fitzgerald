@@ -1,0 +1,5 @@
+# Nurturing Roots Therapy — static site, no build step, no custom domain.
+# Preview only: do not attach a custom domain until Pamela reviews.
+[build]
+  publish = "."
+  command = "echo 'Static site — no build step.'"
