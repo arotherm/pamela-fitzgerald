@@ -105,8 +105,9 @@ p { margin: 0 0 1em; }
   border-radius: 999px;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
+.btn:hover { transform: translateY(-2px); }
 .btn-primary { background: var(--green); color: var(--cream); }
 .btn-primary:hover { background: var(--green-deep); color: var(--cream); }
 .btn-ghost { border-color: var(--green); color: var(--green); background: transparent; }
@@ -167,7 +168,9 @@ p { margin: 0 0 1em; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1.8rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+.offering:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -20px rgba(34, 56, 39, 0.35); }
 .offering-featured { background: var(--green); border-color: var(--green); color: #f2f0e4; }
 .offering-featured h3 { color: var(--cream); }
 .offering-featured p { color: #dde3cf; }
@@ -235,6 +238,19 @@ p { margin: 0 0 1em; }
 /* Events */
 .events { padding: clamp(2.5rem, 6vw, 4rem) 0; background: var(--stone-deep); }
 .events p { max-width: 36rem; margin-bottom: 0; }
+.events-subhead { font-size: 1.15rem; margin: 1.8rem 0 0.9rem; }
+.event-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem; max-width: 44rem; }
+.event-item {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.event-item:hover { transform: translateY(-3px); box-shadow: 0 16px 34px -20px rgba(34, 56, 39, 0.35); }
+.event-item p { margin: 0; }
+.event-item p + p { margin-top: 0.3rem; }
+.event-title { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.15rem; color: var(--green-deep); }
 
 /* Contact */
 .contact { padding: clamp(3.5rem, 7vw, 5.5rem) 0; }
@@ -287,6 +303,9 @@ p { margin: 0 0 1em; }
 .footer-note { grid-column: 1 / -1; font-size: 0.85rem; opacity: 0.75; margin-top: 1rem; }
 
 /* Responsive */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
 @media (max-width: 900px) {
   .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .hero-figure { order: -1; }
